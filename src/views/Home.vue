@@ -1,6 +1,7 @@
 <template>
   <div class="home">
-    <h1>{{ message }}</h1>
+    <a href="/#/create" class="btn btn-primary">Create a New Pitch</a>
+    <!-- <button>Create a New Pitch</button> -->
     <div v-for="pitch in pitches">
       <h2>{{ pitch.title }}</h2>
       <p>Logline: {{ pitch.logline }}</p>
@@ -11,26 +12,24 @@
       <p>Visual Style: {{ pitch.visual_style_description }}</p>
       <p>Filmmaker Biography: {{ pitch.filmmaker_bio }}</p>
 
-<!--       <h2>{{ pitch.locations }}</h2> -->
+      <h2>Locations:</h2>
+      <div v-for="location in pitch.locations">
+        <p>Name: {{ location.name }}</p>
+        <p>Description: {{ location.description }}</p>
+      </div>
 
-            <h2>Locations:</h2>
-        <div v-for="location in pitch.locations">
-          <p>Name: {{ location.name }}</p>
-          <p>Description: {{ location.description }}</p>
-        </div>
+      <h2>Characters:</h2>
+      <div v-for="character in pitch.characters">
+        <p>Name: {{ character.first_name }} {{ character.last_name }}</p>
+        <p>Description: {{ character.description }}</p>
+      </div>
 
-       <h2>Characters:</h2>
-        <div v-for="character in pitch.characters">
-          <p>Name: {{ character.first_name }} {{ character.last_name }}</p>
-          <p>Description: {{ character.description }}</p>
-        </div>
       <h2>Music:</h2>
-        <div v-for="music in pitch.musics">
-          <p>Name: {{ music.name }}</p>
-          <p>Artist: {{ music.artist }}</p>
-          <p>Description: {{ music.description }}</p>
-        </div>
-      
+      <div v-for="music in pitch.musics">
+        <p>Name: {{ music.name }}</p>
+        <p>Artist: {{ music.artist }}</p>
+        <p>Description: {{ music.description }}</p>
+      </div>
     </div>
   </div>
 </template>

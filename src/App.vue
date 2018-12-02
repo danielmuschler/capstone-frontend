@@ -1,52 +1,163 @@
 <template>
   <div id="app">
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-
-    <div>
-      <router-link to="/signup">Signup</router-link>
-    </div>
-
-    <div>
-      <router-link to="/login">Login</router-link> 
-    </div>
-
-    <div>
-    <router-link to="/logout">Logout</router-link>
-    </div>
-    <!-- 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Dropdown
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Something else here</a>
+    <div class="container-fluid">
+      <!-- Menu -->
+      <div class="d-none d-md-block menu">
+        <div class="list-group cbp-l-filters-button js-filters-juicy-projects">
+          <div data-filter="*" class="cbp-filter-item list-group-item logo">
+            <img src="contents/images/logo.png" alt="img" />
+          </div>
+          <div id="menu-links">
+            <a href="/#/" class="cbp-singlePage list-group-item hvr-underline-from-left text-uppercase">Pitches</a>
+            <a href="/#/" class="cbp-singlePage list-group-item hvr-underline-from-left text-uppercase">Locations</a>
+            <a href="/#/" class="cbp-singlePage list-group-item hvr-underline-from-left text-uppercase">Characters</a>
+            <a href="/#/" class="cbp-singlePage list-group-item hvr-underline-from-left text-uppercase">Music</a>
+            <a href="/#/signup" class="cbp-singlePage list-group-item hvr-underline-from-left text-uppercase">Signup</a>
+            <a href="/#/login" class="cbp-singlePage list-group-item hvr-underline-from-left text-uppercase">Login</a>
+            <a href="/#/logout" class="cbp-singlePage list-group-item hvr-underline-from-left text-uppercase">Logout</a>
+          </div>
+          <!-- Contact -->
+          <div class="list-group-item">
+            <address>
+              <strong>Company, Inc.</strong><br />
+              1234 Lorem Street, 100<br />
+              Lorem Ipsum City, 10100<br />
+              <abbr title="Phone">P:</abbr> (123) 456-7890 <br /><br />
+              <a href="#map" data-toggle="modal"><i class="fa fa-map-o" aria-hidden="true"></i></a>
+            </address>
+            <address>
+              <strong>Your Name</strong><br />
+              <a href="mailto:#">your.name@email.com</a>
+            </address>
+          </div>
+          <!-- /Contact -->
+        </div>
+      </div>
+      <!-- /Menu -->
+      <div class="main">
+        <!-- Mobile Menu -->
+        <div class="d-block d-md-none">
+          <nav class="navbar navbar-light">
+            <div class="container-fluid">
+              <div id="BtnMobilMenu" class="text-center">
+                <img
+                  data-toggle="collapse"
+                  data-target="#bs-example-navbar-collapse-1"
+                  aria-expanded="false"
+                  src="contents/images/logo.png"
+                  alt="img2"
+                />
+                <button
+                  type="button"
+                  class="navbar-toggler"
+                  data-toggle="collapse"
+                  data-target="#bs-example-navbar-collapse-1"
+                  aria-expanded="false"
+                  aria-controls="bs-example-navbar-collapse-1"
+                  aria-label="Toggle navigation"
+                >
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+              </div>
+              <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="navbar-nav js-filters-juicy-projects">
+                  <li class="cbp-singlePage list-group-item text-center hvr-underline-from-center text-uppercase">
+                    <a href="about-me.html" class="cbp-singlePage" data-cbp-singlePage="myCustomSinglePage1"
+                      >About Me</a
+                    >
+                  </li>
+                  <li class="cbp-singlePage list-group-item text-center hvr-underline-from-center text-uppercase">
+                    <a href="typography.html" class="cbp-singlePage" data-cbp-singlePage="myCustomSinglePage2"
+                      >Typography</a
+                    >
+                  </li>
+                  <li
+                    data-filter="*"
+                    class="cbp-filter-item list-group-item text-center hvr-underline-from-center text-uppercase"
+                  >
+                    All Portfolio
+                  </li>
+                  <li
+                    data-filter=".movie"
+                    class="cbp-filter-item list-group-item text-center hvr-underline-from-center text-uppercase"
+                  >
+                    Movie
+                  </li>
+                  <li
+                    data-filter=".identity"
+                    class="cbp-filter-item list-group-item text-center hvr-underline-from-center text-uppercase"
+                  >
+                    Identity
+                  </li>
+                  <li
+                    data-filter=".web-design"
+                    class="cbp-filter-item list-group-item text-center hvr-underline-from-center text-uppercase"
+                  >
+                    Web Design
+                  </li>
+                  <li
+                    data-filter=".graphic"
+                    class="cbp-filter-item list-group-item text-center hvr-underline-from-center text-uppercase"
+                  >
+                    Graphic
+                  </li>
+                  <li
+                    data-filter=".logos"
+                    class="cbp-filter-item list-group-item text-center hvr-underline-from-center text-uppercase"
+                  >
+                    Logo
+                  </li>
+                </ul>
+              </div>
             </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#">Disabled</a>
-          </li>
-        </ul>
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
-      </div> -->
-</nav>
-<router-view/>
-  </div>
+          </nav>
+        </div>
+        <!-- /Mobile Menu -->
 
+        <div class="portfolio-content"><router-view /></div>
+      </div>
+    </div>
+    <!-- footer -->
+    <footer class="footer">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="d-none d-md-block col-md-5 col-lg-5">
+            <small class="footer-small">2017 © &nbsp; Made with love by ThemeBang</small>
+          </div>
+          <div class="col-sm-12 col-md-7 col-lg-7">
+            <!-- Address -->
+            <div class="d-block d-md-none text-center">
+              <address>
+                <strong>Company, Inc.</strong><br />
+                1234 Lorem Street, 100<br />
+                Lorem Ipsum City, 10100<br />
+                <abbr title="Phone">P:</abbr> (123) 456-7890 <br /><br />
+                <i aria-hidden="true" data-toggle="modal" data-target="#map" class="fa fa-map-o"></i>
+              </address>
+              <address>
+                <strong>Your Name</strong><br />
+                <a href="mailto:#">your.name@email.com</a>
+              </address>
+            </div>
+            <!-- /Address -->
+            <!-- Social Media -->
+            <ul class="social-icons">
+              <li class="facebook"><a href="#" target="_blank">Facebook</a></li>
+              <li class="twitter"><a href="#" target="_blank">Twitter</a></li>
+              <li class="googleplus"><a href="#" target="_blank">Google +</a></li>
+              <li class="youtube"><a href="#" target="_blank">YouTube</a></li>
+              <li class="pinterest"><a href="#" target="_blank">Pinterest</a></li>
+              <li class="vimeo"><a href="#" target="_blank">Vimeo</a></li>
+              <li class="linkedin"><a href="#" target="_blank">LinkedIn</a></li>
+              <li class="rss"><a href="#" target="_blank">RSS Feed</a></li>
+            </ul>
+            <div class="clearfix"></div>
+            <!-- /Social Media -->
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
 </template>
 
-<style>
-</style>
+<style></style>

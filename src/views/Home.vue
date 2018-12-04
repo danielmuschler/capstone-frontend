@@ -25,6 +25,11 @@
       </div>
 
       <h2>Music:</h2>
+      <!-- <button v-on:click="authorizeSpotify();">Connect to Spotify</button> -->
+      <a
+        href="https://accounts.spotify.com/authorize?client_id=9cc3a914338d4b089e1892d11d72f705&response_type=code&redirect_uri=http://localhost:8080"
+        >Connect to Spotify</a
+      >
       <div v-for="music in pitch.musics">
         <p>Name: {{ music.name }}</p>
         <p>Artist: {{ music.artist }}</p>
@@ -48,6 +53,14 @@ export default {
   },
 
   created: function() {
+    const spotifyCode = new URLSearchParams(window.location.search).get("code");
+    if (spotifyCode) {
+      axios.get("http://localhost:3000/api/spotify/callback?code=" + spotifyCode).then(response => {
+        var spotifyAccessToken = response.data.access_token;
+        localStorage.setItem("spotifyAccessToken", spotifyAccessToken);
+        window.history.replaceState({}, document.title, "/");
+      });
+    }
     axios
       .get("http://localhost:3000/api/pitches")
       .then(
@@ -62,7 +75,13 @@ export default {
         }.bind(this)
       );
   },
-  methods: {},
+  methods: {
+    authorizeSpotify: function() {
+      axios.get("http://localhost:3000/api/spotify_authorize").then(response => {
+        console.log(response);
+      });
+    }
+  },
   computed: {}
 };
 </script>

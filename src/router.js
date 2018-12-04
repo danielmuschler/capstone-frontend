@@ -5,6 +5,7 @@ import Signup from "./views/Signup.vue";
 import Login from "./views/Login.vue";
 import Logout from "./views/Logout.vue";
 import Create from "./views/Create.vue";
+import Music from "./views/Music.vue";
 Vue.use(Router);
 
 export default new Router({
@@ -18,6 +19,7 @@ export default new Router({
     { path: "/signup", name: "signup", component: Signup },
     { path: "/login", name: "login", component: Login },
     { path: "/logout", name: "logout", component: Logout },
+    { path: "/music", name: "music", component: Music },
     {
       path: "/about",
       name: "about"

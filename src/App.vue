@@ -9,9 +9,13 @@
           </div>
           <div id="menu-links">
             <a href="/#/" class="cbp-singlePage list-group-item hvr-underline-from-left text-uppercase">Pitches</a>
-            <a href="/#/" class="cbp-singlePage list-group-item hvr-underline-from-left text-uppercase">Locations</a>
-            <a href="/#/" class="cbp-singlePage list-group-item hvr-underline-from-left text-uppercase">Characters</a>
-            <a href="/#/" class="cbp-singlePage list-group-item hvr-underline-from-left text-uppercase">Music</a>
+            <a href="/#/locations" class="cbp-singlePage list-group-item hvr-underline-from-left text-uppercase"
+              >Locations</a
+            >
+            <a href="/#/characters" class="cbp-singlePage list-group-item hvr-underline-from-left text-uppercase"
+              >Characters</a
+            >
+            <a href="/#/music" class="cbp-singlePage list-group-item hvr-underline-from-left text-uppercase">Music</a>
             <a href="/#/signup" class="cbp-singlePage list-group-item hvr-underline-from-left text-uppercase">Signup</a>
             <a href="/#/login" class="cbp-singlePage list-group-item hvr-underline-from-left text-uppercase">Login</a>
             <a href="/#/logout" class="cbp-singlePage list-group-item hvr-underline-from-left text-uppercase">Logout</a>

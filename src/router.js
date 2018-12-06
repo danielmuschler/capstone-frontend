@@ -6,6 +6,9 @@ import Login from "./views/Login.vue";
 import Logout from "./views/Logout.vue";
 import Create from "./views/Create.vue";
 import Music from "./views/Music.vue";
+import Characters from "./views/Characters.vue";
+import Locations from "./views/Locations.vue";
+
 Vue.use(Router);
 
 export default new Router({
@@ -20,6 +23,8 @@ export default new Router({
     { path: "/login", name: "login", component: Login },
     { path: "/logout", name: "logout", component: Logout },
     { path: "/music", name: "music", component: Music },
+    { path: "/characters", name: "characters", component: Characters },
+    { path: "/locations", name: "locations", component: Locations },
     {
       path: "/about",
       name: "about"

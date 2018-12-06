@@ -12,12 +12,6 @@
       <p>Visual Style: {{ pitch.visual_style_description }}</p>
       <p>Filmmaker Biography: {{ pitch.filmmaker_bio }}</p>
 
-      <h2>Locations:</h2>
-      <div v-for="location in pitch.locations">
-        <p>Name: {{ location.name }}</p>
-        <p>Description: {{ location.description }}</p>
-      </div>
-
       <h2>Characters:</h2>
       <div v-for="character in pitch.characters">
         <p>Name: {{ character.first_name }} {{ character.last_name }}</p>

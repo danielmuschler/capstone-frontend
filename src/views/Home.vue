@@ -13,19 +13,15 @@
             <div class="cbp-caption-activeWrap">
               <div class="cbp-l-caption-alignCenter">
                 <div class="cbp-l-caption-body">
-                  <div class="btn-group">
-                    <a
-                      href="projects/project1.html"
-                      class="cbp-singlePage btn"
-                      rel="nofollow"
-                      data-cbp-singlePage="projects"
-                      >more info</a
-                    >
-                    <a
+                  <div class="btn">
+                    <a :href="['/#/pitches/' + pitch.id]" class="btn" rel="nofollow">more info</a>
+                    <!--
+                      <a
                       href="https://www.youtube.com/watch?v=3wbvpOIIBQA"
                       class="cbp-lightbox btn btn-sm btn-right"
                       data-title="GoPro: HERO3+ Black Edition<br>by GoPro"
                       >view video</a
+                    -->
                     >
                   </div>
                 </div>

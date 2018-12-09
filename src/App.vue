@@ -9,14 +9,16 @@
             <h3>RollerCoaster</h3>
           </div>
           <div id="menu-links">
-            <a href="/#/" class="list-group-item hvr-underline-from-left text-uppercase">Pitches</a>
-            <a href="/#/locations" class="list-group-item hvr-underline-from-left text-uppercase">Locations</a>
-            <a href="/#/characters" class="list-group-item hvr-underline-from-left text-uppercase">Characters</a>
-            <a href="/#/music" class="list-group-item hvr-underline-from-left text-uppercase">Music</a>
+            <!--
+              <a href="/#/" class="list-group-item hvr-underline-from-left text-uppercase">Pitches</a>
+              <a href="/#/locations" class="list-group-item hvr-underline-from-left text-uppercase">Locations</a>
+              <a href="/#/characters" class="list-group-item hvr-underline-from-left text-uppercase">Characters</a>
+              <a href="/#/music" class="list-group-item hvr-underline-from-left text-uppercase">Music</a>
+            -->
+            <a href="/#/" class="list-group-item hvr-underline-from-left text-uppercase">Back to all pitches</a>
             <a href="/#/signup" class="list-group-item hvr-underline-from-left text-uppercase">Signup</a>
             <a href="/#/login" class="list-group-item hvr-underline-from-left text-uppercase">Login</a>
             <a href="/#/logout" class="list-group-item hvr-underline-from-left text-uppercase">Logout</a>
-            <a href="/#/" class="list-group-item hvr-underline-from-left text-uppercase">Back to all pitches</a>
           </div>
 
           <!-- Contact -->

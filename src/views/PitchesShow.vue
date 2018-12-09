@@ -8,7 +8,7 @@
             <div class="cbp-l-project-desc-title">
                 <span>{{ pitch.title }}</span>
             </div>
-            <div class="cbp-l-project-desc-text">Synopsis: {{ pitch.synopsis }}</div>
+            <div class="cbp-l-project-desc-text"><strong>Synopsis:</strong> {{ pitch.synopsis }}</div>
             </div>
             <div class="cbp-l-project-details">
             <div class="cbp-l-project-details-title">
@@ -18,10 +18,10 @@
          
 
         </div>
-            <p>Logline: {{ pitch.logline }}</p>
-            <p>Thematic Description: {{ pitch.thematic_description }}</p>
-            <p>Visual Style: {{ pitch.visual_style_description }}</p>
-            <p>Filmmaker Biography: {{ pitch.filmmaker_bio }}</p>
+            <p><strong>Logline:</strong> {{ pitch.logline }}</p>
+            <p><strong>Thematic Description:</strong> {{ pitch.thematic_description }}</p>
+            <p><strong>Visual Style:</strong> {{ pitch.visual_style_description }}</p>
+            <p><strong>Filmmaker Biography:</strong> {{ pitch.filmmaker_bio }}</p>
 
 
         <li class="cbp-l-project-related-item">

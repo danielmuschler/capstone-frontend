@@ -5,29 +5,26 @@
       <div class="d-none d-md-block menu">
         <div class="list-group cbp-l-filters-button js-filters-juicy-projects">
           <div data-filter="*" class="cbp-filter-item list-group-item logo">
-            <img src="contents/images/logo.png" alt="img" />
+            <!-- <img src="contents/images/logo.png" alt="img" /> -->
+            <h3>RollerCoaster</h3>
           </div>
           <div id="menu-links">
-            <a href="/#/" class="cbp-singlePage list-group-item hvr-underline-from-left text-uppercase">Pitches</a>
-            <a href="/#/locations" class="cbp-singlePage list-group-item hvr-underline-from-left text-uppercase"
-              >Locations</a
-            >
-            <a href="/#/characters" class="cbp-singlePage list-group-item hvr-underline-from-left text-uppercase"
-              >Characters</a
-            >
-            <a href="/#/music" class="cbp-singlePage list-group-item hvr-underline-from-left text-uppercase">Music</a>
-            <a href="/#/signup" class="cbp-singlePage list-group-item hvr-underline-from-left text-uppercase">Signup</a>
-            <a href="/#/login" class="cbp-singlePage list-group-item hvr-underline-from-left text-uppercase">Login</a>
-            <a href="/#/logout" class="cbp-singlePage list-group-item hvr-underline-from-left text-uppercase">Logout</a>
+            <a href="/#/" class="list-group-item hvr-underline-from-left text-uppercase">Pitches</a>
+            <a href="/#/locations" class="list-group-item hvr-underline-from-left text-uppercase">Locations</a>
+            <a href="/#/characters" class="list-group-item hvr-underline-from-left text-uppercase">Characters</a>
+            <a href="/#/music" class="list-group-item hvr-underline-from-left text-uppercase">Music</a>
+            <a href="/#/signup" class="list-group-item hvr-underline-from-left text-uppercase">Signup</a>
+            <a href="/#/login" class="list-group-item hvr-underline-from-left text-uppercase">Login</a>
+            <a href="/#/logout" class="list-group-item hvr-underline-from-left text-uppercase">Logout</a>
           </div>
           <!-- Contact -->
           <div class="list-group-item">
             <address>
-              <strong>Company, Inc.</strong><br />
+              <strong>RollerCoaster, Inc.</strong><br />
               1234 Lorem Street, 100<br />
               Lorem Ipsum City, 10100<br />
               <abbr title="Phone">P:</abbr> (123) 456-7890 <br /><br />
-              <a href="#map" data-toggle="modal"><i class="fa fa-map-o" aria-hidden="true"></i></a>
+              <!-- <a href="#map" data-toggle="modal"><i class="fa fa-map-o" aria-hidden="true"></i></a> -->
             </address>
             <address>
               <strong>Your Name</strong><br />
@@ -122,45 +119,53 @@
       </div>
     </div>
     <!-- footer -->
-    <footer class="footer">
+    <!--
+      <footer class="footer">
       <div class="container-fluid">
         <div class="row">
           <div class="d-none d-md-block col-md-5 col-lg-5">
             <small class="footer-small">2017 © &nbsp; Made with love by ThemeBang</small>
           </div>
           <div class="col-sm-12 col-md-7 col-lg-7">
-            <!-- Address -->
-            <div class="d-block d-md-none text-center">
-              <address>
-                <strong>Company, Inc.</strong><br />
-                1234 Lorem Street, 100<br />
-                Lorem Ipsum City, 10100<br />
-                <abbr title="Phone">P:</abbr> (123) 456-7890 <br /><br />
-                <i aria-hidden="true" data-toggle="modal" data-target="#map" class="fa fa-map-o"></i>
-              </address>
-              <address>
-                <strong>Your Name</strong><br />
-                <a href="mailto:#">your.name@email.com</a>
-              </address>
-            </div>
-            <!-- /Address -->
-            <!-- Social Media -->
-            <ul class="social-icons">
-              <li class="facebook"><a href="#" target="_blank">Facebook</a></li>
-              <li class="twitter"><a href="#" target="_blank">Twitter</a></li>
-              <li class="googleplus"><a href="#" target="_blank">Google +</a></li>
-              <li class="youtube"><a href="#" target="_blank">YouTube</a></li>
-              <li class="pinterest"><a href="#" target="_blank">Pinterest</a></li>
-              <li class="vimeo"><a href="#" target="_blank">Vimeo</a></li>
-              <li class="linkedin"><a href="#" target="_blank">LinkedIn</a></li>
-              <li class="rss"><a href="#" target="_blank">RSS Feed</a></li>
-            </ul>
-            <div class="clearfix"></div>
-            <!-- /Social Media -->
-          </div>
+            <!-- Address
+    -->
+    <!--
+      <div class="d-block d-md-none text-center">
+        <address>
+          <strong>Company, Inc.</strong><br />
+          1234 Lorem Street, 100<br />
+          Lorem Ipsum City, 10100<br />
+          <abbr title="Phone">P:</abbr> (123) 456-7890 <br /><br />
+          <i aria-hidden="true" data-toggle="modal" data-target="#map" class="fa fa-map-o"></i>
+        </address>
+        <address>
+          <strong>Your Name</strong><br />
+          <a href="mailto:#">your.name@email.com</a>
+        </address>
+      </div>
+      <!-- /Address
+    -->
+    <!-- Social Media -->
+    <!--
+      <ul class="social-icons">
+        <li class="facebook"><a href="#" target="_blank">Facebook</a></li>
+        <li class="twitter"><a href="#" target="_blank">Twitter</a></li>
+        <li class="googleplus"><a href="#" target="_blank">Google +</a></li>
+        <li class="youtube"><a href="#" target="_blank">YouTube</a></li>
+        <li class="pinterest"><a href="#" target="_blank">Pinterest</a></li>
+        <li class="vimeo"><a href="#" target="_blank">Vimeo</a></li>
+        <li class="linkedin"><a href="#" target="_blank">LinkedIn</a></li>
+        <li class="rss"><a href="#" target="_blank">RSS Feed</a></li>
+      </ul>
+      <div class="clearfix"></div>
+      <!-- /Social Media
+    -->
+    <!--
+      /div>
         </div>
       </div>
-    </footer>
+    -->
+    <!-- /footer> -->
   </div>
 </template>
 

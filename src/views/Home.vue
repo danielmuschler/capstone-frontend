@@ -1,34 +1,42 @@
 <template>
-  <div class="home">
-    <a href="/#/create" class="btn btn-primary">Create a New Pitch</a>
-    <!-- <button>Create a New Pitch</button> -->
-    <div v-for="pitch in pitches">
-      <h2>{{ pitch.title }}</h2>
-      <p>Logline: {{ pitch.logline }}</p>
-      <p>Genre: {{ pitch.genre }}</p>
-      <p>Synopsis: {{ pitch.synopsis }}</p>
-      <p>Producer Statement: {{ pitch.producer_statement }}</p>
-      <p>Thematic Description: {{ pitch.thematic_description }}</p>
-      <p>Visual Style: {{ pitch.visual_style_description }}</p>
-      <p>Filmmaker Biography: {{ pitch.filmmaker_bio }}</p>
+  <!-- <button>Create a New Pitch</button> -->
+  <!-- <a href="/#/create" class="btn btn-primary">Create a New Pitch</a> -->
 
-      <h2>Characters:</h2>
-      <div v-for="character in pitch.characters">
-        <p>Name: {{ character.first_name }} {{ character.last_name }}</p>
-        <p>Description: {{ character.description }}</p>
+  <div class="portfolio-content portfolio-1">
+    <!-- portfolio Grid -->
+    <div id="js-grid-juicy-projects" class="cbp">
+      <!-- portfolio loop -->
+      <div v-for="pitch in pitches" class="cbp-item movie">
+        <div class="cbp-item-wrap">
+          <div class="cbp-caption">
+            <div class="cbp-caption-defaultWrap"><img src="contents/images/portfolios/600x600/1.jpg" alt="img3" /></div>
+            <div class="cbp-caption-activeWrap">
+              <div class="cbp-l-caption-alignCenter">
+                <div class="cbp-l-caption-body">
+                  <div class="btn-group">
+                    <a
+                      href="projects/project1.html"
+                      class="cbp-singlePage btn"
+                      rel="nofollow"
+                      data-cbp-singlePage="projects"
+                      >more info</a
+                    >
+                    <a
+                      href="https://www.youtube.com/watch?v=3wbvpOIIBQA"
+                      class="cbp-lightbox btn btn-sm btn-right"
+                      data-title="GoPro: HERO3+ Black Edition<br>by GoPro"
+                      >view video</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="cbp-l-grid-projects-title uppercase text-center uppercase text-center">{{ pitch.title }}</div>
+          <div class="cbp-l-grid-projects-desc uppercase text-center uppercase text-center">{{ pitch.genre }}</div>
+        </div>
       </div>
-
-      <h2>Music:</h2>
-      <!-- <button v-on:click="authorizeSpotify();">Connect to Spotify</button> -->
-      <a
-        href="https://accounts.spotify.com/authorize?client_id=9cc3a914338d4b089e1892d11d72f705&response_type=code&redirect_uri=http://localhost:8080"
-        >Connect to Spotify</a
-      >
-      <div v-for="music in pitch.musics">
-        <p>Name: {{ music.name }}</p>
-        <p>Artist: {{ music.artist }}</p>
-        <p>Description: {{ music.description }}</p>
-      </div>
+      <!-- /portfolio 1 -->
     </div>
   </div>
 </template>
@@ -36,6 +44,7 @@
 <style></style>
 
 <script>
+/* global setupPortfolio */
 var axios = require("axios");
 
 export default {
@@ -68,6 +77,14 @@ export default {
           this.$router.push("/login");
         }.bind(this)
       );
+  },
+  // mounted: function() {
+  //   console.log("mounted...");
+  //   setupPortfolio();
+  // },
+  updated: function() {
+    console.log("updated...");
+    setupPortfolio();
   },
   methods: {
     authorizeSpotify: function() {

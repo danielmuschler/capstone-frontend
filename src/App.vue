@@ -16,7 +16,9 @@
             <a href="/#/signup" class="list-group-item hvr-underline-from-left text-uppercase">Signup</a>
             <a href="/#/login" class="list-group-item hvr-underline-from-left text-uppercase">Login</a>
             <a href="/#/logout" class="list-group-item hvr-underline-from-left text-uppercase">Logout</a>
+            <a href="/#/" class="list-group-item hvr-underline-from-left text-uppercase">Back to all pitches</a>
           </div>
+
           <!-- Contact -->
           <div class="list-group-item">
             <address>

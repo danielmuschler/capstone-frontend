@@ -14,17 +14,11 @@
             <div class="cbp-l-project-details-title">
                 <span>Genre: {{ pitch.genre }}</span>
             </div>
-             <!-- List-->
-            <ul class="cbp-l-project-details-list">
-                <li><strong>Client:</strong>John Doe</li>
-                <li><strong>Date</strong>22 December 2016</li>
-                <li><strong>Categories</strong>Logo, Graphic</li>
-            </ul>
-             <!--/List-->
+            <p><strong>Producer Statement:</strong> {{ pitch.producer_statement }}</p>
+         
 
         </div>
             <p>Logline: {{ pitch.logline }}</p>
-            <p>Producer Statement: {{ pitch.producer_statement }}</p>
             <p>Thematic Description: {{ pitch.thematic_description }}</p>
             <p>Visual Style: {{ pitch.visual_style_description }}</p>
             <p>Filmmaker Biography: {{ pitch.filmmaker_bio }}</p>
@@ -73,9 +67,6 @@
           <!-- </div> -->
         </div>
       </a>
-      <div>
-         <a href="/#/">Back to all pitches</a>
-      </div>
       </div>
     </div>
   </div>

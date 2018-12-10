@@ -63,6 +63,7 @@
               <p>Artist: {{ music.artist }}</p>
               <p>Description: {{ music.description }}</p>
             </div>
+            <iframe v-bind:src="`https://open.spotify.com/embed/playlist/{{ pitch.spotify_playlist_id }}`" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
           </li>
           <!-- </div> -->
         </div>

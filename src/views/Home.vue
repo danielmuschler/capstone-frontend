@@ -1,7 +1,4 @@
 <template>
-  <!-- <button>Create a New Pitch</button> -->
-  <!-- <a href="/#/create" class="btn btn-primary">Create a New Pitch</a> -->
-
   <div class="portfolio-content portfolio-1">
     <!-- portfolio Grid -->
     <div id="js-grid-juicy-projects" class="cbp">

@@ -159,39 +159,39 @@ export default {
             spotifyRequestOptions
           );
         })
+        .then(response => {
+          var params = {
+            title: this.title,
+            logline: this.logline,
+            genre: this.genre,
+            synopsis: this.synopsis,
+            producer_statement: this.producer_statement,
+            thematic_description: this.thematic_description,
+            visual_style_description: this.visual_style_description,
+            filmmaker_bio: this.filmmaker_bio,
+            location_name: this.location_name,
+            location_description: this.location_description,
+            first_name: this.first_name,
+            last_name: this.last_name,
+            character_description: this.character_description,
+            song_name: this.song_name,
+            artist: this.artist,
+            song_description: this.song_description,
+            SpotifyID: playlistId
+          };
+          console.log("submit", params);
+          axios
+            .post("http://localhost:3000/api/pitches", params)
+            .then(response => {
+              this.$router.push("/");
+            })
+            .catch(error => {
+              this.errors = error.response.data.errors;
+            });
+        })
         .catch(error => {
           console.log("ERROR...", error.response);
         });
-
-      var params = {
-        title: this.title,
-        logline: this.logline,
-        genre: this.genre,
-        synopsis: this.synopsis,
-        producer_statement: this.producer_statement,
-        thematic_description: this.thematic_description,
-        visual_style_description: this.visual_style_description,
-        filmmaker_bio: this.filmmaker_bio,
-        location_name: this.location_name,
-        location_description: this.location_description,
-        first_name: this.first_name,
-        last_name: this.last_name,
-        character_description: this.character_description,
-        song_name: this.song_name,
-        artist: this.artist,
-        song_description: this.song_description
-      };
-      console.log("submit", params);
-      // axios
-      //   .post("http://localhost:3000/api/pitches", params)
-      //   .then(response => {
-      //     this.$router.push("/");
-      //   })
-      //   .catch(error => {
-      //     this.errors = error.response.data.errors;
-      //   });
-
-      // A SPOTIFY PLAYLIST ID: 4StPtLb4j6wFRnyZihLgH2
     }
   }
 };

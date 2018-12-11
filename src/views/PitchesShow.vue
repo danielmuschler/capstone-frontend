@@ -54,16 +54,15 @@
                         <div class="cbp-l-project-related-title">Music</div>
                     </a>
             <!-- <button v-on:click="authorizeSpotify();">Connect to Spotify</button> -->
-            <a
+            <!-- <a
               href="https://accounts.spotify.com/authorize?client_id=9cc3a914338d4b089e1892d11d72f705&response_type=code&redirect_uri=http://localhost:8080"
-              >Connect to Spotify</a
-            >
+              >Connect to Spotify</a> -->
             <div v-for="music in pitch.musics">
               <p>Name: {{ music.name }}</p>
               <p>Artist: {{ music.artist }}</p>
               <p>Description: {{ music.description }}</p>
             </div>
-            <iframe v-bind:src="`https://open.spotify.com/embed/playlist/{{ pitch.spotify_playlist_id }}`" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+            <iframe v-bind:src="`https://open.spotify.com/embed/playlist/${pitch.spotify_id}`" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
           </li>
           <!-- </div> -->
         </div>

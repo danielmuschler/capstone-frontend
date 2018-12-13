@@ -16,9 +16,9 @@
             </div>
             <p><strong>Producer Statement:</strong> {{ pitch.producer_statement }}</p>
             <p><strong>Market Potential:</strong> According to past films made in this genre and budget, here are three potential domestic results for total box office revenue:</p>
-            <p><strong>Low:</strong> ${{randomNumber}}</p>
-            <p><strong>Middle:</strong> ${{randomNumber}}</p>
-            <p><strong>High:</strong> ${{randomNumber}}</p>
+            <p><strong>Low Estimate:</strong> ${{randomNumber * 5000}}</p>
+            <p><strong>Middle Estimate:</strong> ${{randomNumber * 80000}}</p>
+            <p><strong>High Estimate:</strong> ${{randomNumber * 100000}}</p>
         </div>
             <p><strong>Logline:</strong> {{ pitch.logline }}</p>
             <p><strong>Thematic Description:</strong> {{ pitch.thematic_description }}</p>
@@ -152,13 +152,8 @@ export default {
   },
   methods: {
     randomNumberFunction: function() {
-      // var min = 4;
-      // var max = 10;
-      // var random = Math.floor(Math.random() * (+max - +min)) + +min;
-      // document.write("Random Number Generated : " + random);
-
-      this.randomNumber = Math.random(); // multiply to generate
-      Math.round(this.randomNumber);
+      this.randomNumber = Math.random() * 100; // multiply to generate
+      this.randomNumber = Math.round(this.randomNumber);
     }
   },
 

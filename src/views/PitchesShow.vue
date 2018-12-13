@@ -16,9 +16,9 @@
             </div>
             <p><strong>Producer Statement:</strong> {{ pitch.producer_statement }}</p>
             <p><strong>Market Potential:</strong> According to past films made in this genre and budget, here are three potential domestic results for total box office revenue:</p>
-            <p><strong>Low:</strong> {{randomNumber}}</p>
-            <p><strong>Middle:</strong> {{randomNumber}}</p>
-            <p><strong>High:</strong> {{randomNumber}}</p>
+            <p><strong>Low:</strong> ${{randomNumber}}</p>
+            <p><strong>Middle:</strong> ${{randomNumber}}</p>
+            <p><strong>High:</strong> ${{randomNumber}}</p>
         </div>
             <p><strong>Logline:</strong> {{ pitch.logline }}</p>
             <p><strong>Thematic Description:</strong> {{ pitch.thematic_description }}</p>
@@ -152,8 +152,10 @@ export default {
   methods: {
     randomNumberFunction: function() {
       this.randomNumber = Math.random() * 100; // multiply to generate
+      Math.round(this.randomNumber);
     }
   },
+
   updated: function() {
     console.log("updated...");
     setupPortfolio();

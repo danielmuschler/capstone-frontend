@@ -3,10 +3,11 @@
     <!-- portfolio Grid -->
     <div id="js-grid-juicy-projects" class="cbp">
       <!-- portfolio loop -->
-      <div v-for="pitch in pitches" class="cbp-item movie">
+      <div v-if="imagesLoaded" v-for="pitch in pitches" class="cbp-item movie">
         <div class="cbp-item-wrap">
           <div class="cbp-caption">
-            <div class="cbp-caption-defaultWrap"><img src="contents/images/portfolios/600x600/1.jpg" alt="img3" /></div>
+           <!--  <div class="cbp-caption-defaultWrap"><img :src="pitch.locations[0].image" alt="img3" /></div> -->
+                  <div class="cbp-caption-defaultWrap"><img src="contents/images/portfolios/600x600/1.jpg" /></div>
             <div class="cbp-caption-activeWrap">
               <div class="cbp-l-caption-alignCenter">
                 <div class="cbp-l-caption-body">
@@ -34,7 +35,8 @@
   </div>
 </template>
 
-<style></style>
+<style>
+</style>
 
 <script>
 /* global setupPortfolio */
@@ -44,11 +46,13 @@ export default {
   data: function() {
     return {
       message: "",
-      pitches: []
+      pitches: [],
+      imagesLoaded: true
     };
   },
 
   created: function() {
+    const self = this;
     const spotifyCode = new URLSearchParams(window.location.search).get("code");
     if (spotifyCode) {
       axios.get("http://localhost:3000/api/spotify/callback?code=" + spotifyCode).then(response => {
@@ -63,6 +67,15 @@ export default {
         function(response) {
           console.log(response.data);
           this.pitches = response.data;
+
+          this.pitches.forEach(function(pitch, index) {
+            pitch.locations.forEach(location => {
+              axios.get(`http://localhost:3000/api/flickr/search?search=${location.name}`).then(response => {
+                console.log(response.data);
+                location.image = response.data.image;
+              });
+            });
+          });
         }.bind(this)
       )
       .catch(
@@ -71,10 +84,11 @@ export default {
         }.bind(this)
       );
   },
-  // mounted: function() {
-  //   console.log("mounted...");
-  //   setupPortfolio();
-  // },
+  mounted: function() {
+    console.log("mounted...");
+
+    // setupPortfolio();
+  },
   updated: function() {
     console.log("updated...");
     setupPortfolio();

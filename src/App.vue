@@ -24,19 +24,19 @@
           </div>
 
           <!-- Contact -->
-          <div class="list-group-item">
+          <!-- <div class="list-group-item">
             <address>
               <strong>RollerCoaster, Inc.</strong><br />
               1234 Lorem Street, 100<br />
               Lorem Ipsum City, 10100<br />
               <abbr title="Phone">P:</abbr> (123) 456-7890 <br /><br />
-              <!-- <a href="#map" data-toggle="modal"><i class="fa fa-map-o" aria-hidden="true"></i></a> -->
+              <a href="#map" data-toggle="modal"><i class="fa fa-map-o" aria-hidden="true"></i></a>
             </address>
             <address>
               <strong>Your Name</strong><br />
               <a href="mailto:#">your.name@email.com</a>
             </address>
-          </div>
+          </div> -->
           <!-- /Contact -->
         </div>
       </div>
@@ -47,13 +47,17 @@
           <nav class="navbar navbar-light">
             <div class="container-fluid">
               <div id="BtnMobilMenu" class="text-center">
-                <img
+                <div class=row>
+                  <div class="col-sm-4"></div>
+                <h3>RollerCoaster</h3>
+                </div>
+                <!-- <img
                   data-toggle="collapse"
                   data-target="#bs-example-navbar-collapse-1"
                   aria-expanded="false"
                   src="contents/images/logo.png"
                   alt="img2"
-                />
+                /> -->
                 <button
                   type="button"
                   class="navbar-toggler"
@@ -68,52 +72,30 @@
               </div>
               <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="navbar-nav js-filters-juicy-projects">
-                  <li class="cbp-singlePage list-group-item text-center hvr-underline-from-center text-uppercase">
-                    <a href="about-me.html" class="cbp-singlePage" data-cbp-singlePage="myCustomSinglePage1"
-                      >About Me</a
-                    >
+                  <li class="list-group-item text-center hvr-underline-from-center text-uppercase">
+                    <a href="/#/signup">Sign Up</a>
                   </li>
-                  <li class="cbp-singlePage list-group-item text-center hvr-underline-from-center text-uppercase">
-                    <a href="typography.html" class="cbp-singlePage" data-cbp-singlePage="myCustomSinglePage2"
-                      >Typography</a
-                    >
+                  <!-- <li class="cbp-singlePage list-group-item text-center hvr-underline-from-center text-uppercase">
+                    <a href="typography.html" class="cbp-singlePage" data-cbp-singlePage="myCustomSinglePage2">Login</a>
                   </li>
                   <li
                     data-filter="*"
-                    class="cbp-filter-item list-group-item text-center hvr-underline-from-center text-uppercase"
-                  >
-                    All Portfolio
+                    class="cbp-filter-item list-group-item text-center hvr-underline-from-center text-uppercase">
+                  <a href="about-me.html" class="cbp-singlePage" data-cbp-singlePage="myCustomSinglePage1">
+                    Logout
                   </li>
                   <li
                     data-filter=".movie"
-                    class="cbp-filter-item list-group-item text-center hvr-underline-from-center text-uppercase"
-                  >
-                    Movie
+                    class="cbp-filter-item list-group-item text-center hvr-underline-from-center text-uppercase">
+                  <a href="about-me.html" class="cbp-singlePage" data-cbp-singlePage="myCustomSinglePage1">
+                    Create a New Pitch
                   </li>
                   <li
                     data-filter=".identity"
-                    class="cbp-filter-item list-group-item text-center hvr-underline-from-center text-uppercase"
-                  >
-                    Identity
-                  </li>
-                  <li
-                    data-filter=".web-design"
-                    class="cbp-filter-item list-group-item text-center hvr-underline-from-center text-uppercase"
-                  >
-                    Web Design
-                  </li>
-                  <li
-                    data-filter=".graphic"
-                    class="cbp-filter-item list-group-item text-center hvr-underline-from-center text-uppercase"
-                  >
-                    Graphic
-                  </li>
-                  <li
-                    data-filter=".logos"
-                    class="cbp-filter-item list-group-item text-center hvr-underline-from-center text-uppercase"
-                  >
-                    Logo
-                  </li>
+                    class="cbp-filter-item list-group-item text-center hvr-underline-from-center text-uppercase">
+                  <a href="about-me.html" class="cbp-singlePage" data-cbp-singlePage="myCustomSinglePage1">
+                    Back to All Pitches
+                  </li> -->
                 </ul>
               </div>
             </div>
@@ -175,4 +157,5 @@
   </div>
 </template>
 
-<style></style>
+<style>
+</style>

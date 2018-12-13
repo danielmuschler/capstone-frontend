@@ -25,7 +25,7 @@
             <p><strong>Visual Style:</strong> {{ pitch.visual_style_description }}</p>
             <p><strong>Filmmaker Biography:</strong> {{ pitch.filmmaker_bio }}</p>
 
-
+        <div class="row">
         <li class="cbp-l-project-related-item">
                   <!--   <a href="projects/project7.html" class="cbp-singlePage cbp-l-project-related-link " rel="nofollow" data-cbp-singlePage="projects">
                         <img src="contents/images/portfolios/200x200/2.jpg" alt="">
@@ -71,6 +71,7 @@
             </div>
             <iframe v-bind:src="`https://open.spotify.com/embed/playlist/${pitch.spotify_id}`" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
           </li>
+        </div>
           <!-- </div> -->
         </div>
       </a>
@@ -151,7 +152,12 @@ export default {
   },
   methods: {
     randomNumberFunction: function() {
-      this.randomNumber = Math.random() * 100; // multiply to generate
+      // var min = 4;
+      // var max = 10;
+      // var random = Math.floor(Math.random() * (+max - +min)) + +min;
+      // document.write("Random Number Generated : " + random);
+
+      this.randomNumber = Math.random(); // multiply to generate
       Math.round(this.randomNumber);
     }
   },

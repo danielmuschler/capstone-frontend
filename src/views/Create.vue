@@ -21,7 +21,7 @@
           <label>Thematic Description:</label> <input type="text" class="form-control" v-model="thematic_description" />
         </div>
         <div class="form-group">
-          <label>Visual Style:</label> <input type="text" class="form-control" v-model="visual_style_description" />
+          <label>Visual Style Image:</label> <input type="text" class="form-control" v-model="visual_style_image" />
         </div>
         <div class="form-group">
           <label>Filmmaker Bio:</label> <input type="text" class="form-control" v-model="filmmaker_bio" />

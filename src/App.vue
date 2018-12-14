@@ -75,27 +75,18 @@
                   <li class="list-group-item text-center hvr-underline-from-center text-uppercase">
                     <a href="/#/signup">Sign Up</a>
                   </li>
-                  <!-- <li class="cbp-singlePage list-group-item text-center hvr-underline-from-center text-uppercase">
-                    <a href="typography.html" class="cbp-singlePage" data-cbp-singlePage="myCustomSinglePage2">Login</a>
+                  <li class="list-group-item text-center hvr-underline-from-center text-uppercase">
+                    <a href="/#/login">Log In</a>
                   </li>
-                  <li
-                    data-filter="*"
-                    class="cbp-filter-item list-group-item text-center hvr-underline-from-center text-uppercase">
-                  <a href="about-me.html" class="cbp-singlePage" data-cbp-singlePage="myCustomSinglePage1">
-                    Logout
+                    <li class="list-group-item text-center hvr-underline-from-center text-uppercase">
+                    <a href="/#/logout">Logout</a>
                   </li>
-                  <li
-                    data-filter=".movie"
-                    class="cbp-filter-item list-group-item text-center hvr-underline-from-center text-uppercase">
-                  <a href="about-me.html" class="cbp-singlePage" data-cbp-singlePage="myCustomSinglePage1">
-                    Create a New Pitch
+                  <li class="list-group-item text-center hvr-underline-from-center text-uppercase">
+                  <a href="/#/create">Create a New Pitch</a>
                   </li>
-                  <li
-                    data-filter=".identity"
-                    class="cbp-filter-item list-group-item text-center hvr-underline-from-center text-uppercase">
-                  <a href="about-me.html" class="cbp-singlePage" data-cbp-singlePage="myCustomSinglePage1">
-                    Back to All Pitches
-                  </li> -->
+                  <li class="list-group-item text-center hvr-underline-from-center text-uppercase">
+                  <a href="/#/">Back to All Pitches</a>
+                  </li>
                 </ul>
               </div>
             </div>

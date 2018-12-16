@@ -19,7 +19,7 @@
             <p><strong>Low Estimate:</strong> ${{randomNumber * 5234}}</p>
             <p><strong>Middle Estimate:</strong> ${{randomNumber * 84578}}</p>
             <p><strong>High Estimate:</strong> ${{randomNumber * 1987659}}</p>
-             <button v-on:click="createPDF();">Make pdf</button>
+             <button v-on:click="createPDF();">Make PDF</button>
         </div>
             <p><strong>Logline:</strong> {{ pitch.logline }}</p>
             <p><strong>Thematic Description:</strong> {{ pitch.thematic_description }}</p>
@@ -33,6 +33,7 @@
                         <div class="cbp-l-project-related-title">Locations:</div>
                     </a> -->
                     <p><strong>Locations:</strong></p>
+                    <button>Add Location</button>
             <div v-for="location in pitch.locations">
               <p>Name: {{ location.name }}</p>
               <p>Description: {{ location.description }}</p>
@@ -65,6 +66,7 @@
               href="https://accounts.spotify.com/authorize?client_id=9cc3a914338d4b089e1892d11d72f705&response_type=code&redirect_uri=http://localhost:8080"
               >Connect to Spotify</a> -->
               <p><strong>Music:</strong></p>
+              <button>Add Song</button>
             <div v-for="music in pitch.musics">
               <p>Name: {{ music.name }}</p>
               <p>Artist: {{ music.artist }}</p>
@@ -181,9 +183,9 @@ export default {
           // // //-------------------------------------
           // var producer_statement = this.pitch.producer_statement;
           // var splitProducer_statement = doc.splitTextToSize(producer_statement, 160);
-          // // doc.text = this.randomNumber * 5234;
-          // // doc.text = this.randomNumber * 84578;
-          // // doc.text = this.randomNumber * 1987659;
+          // doc.text = this.randomNumber * 5234;
+          // doc.text = this.randomNumber * 84578;
+          // doc.text = this.randomNumber * 1987659;
           // doc.setFontSize(10);
           // doc.text(splitProducer_statement, 90, 40);
           // // //-------------------------------------
@@ -205,8 +207,12 @@ export default {
               doc.text(location.name, 140, 95 + line * 2);
               doc.text(location.description, 140, 105 + line * 2);
               line += 3;
+
+              //   //link to All Pitches Page
+              doc.textWithLink("Click here for Full Pitch", 25, 200, { url: "http://localhost:8080/#/pitches/" });
             });
           });
+
           //-------------------------------------
 
           //Download PDF

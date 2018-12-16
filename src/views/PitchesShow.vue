@@ -16,9 +16,10 @@
             </div>
             <p><strong>Producer Statement:</strong> {{ pitch.producer_statement }}</p>
             <p><strong>Market Potential:</strong> According to past films made in this genre and budget, here are three potential domestic results for total box office revenue:</p>
-            <p><strong>Low Estimate:</strong> ${{randomNumber * 5000}}</p>
-            <p><strong>Middle Estimate:</strong> ${{randomNumber * 80000}}</p>
-            <p><strong>High Estimate:</strong> ${{randomNumber * 100000}}</p>
+            <p><strong>Low Estimate:</strong> ${{randomNumber * 5234}}</p>
+            <p><strong>Middle Estimate:</strong> ${{randomNumber * 84578}}</p>
+            <p><strong>High Estimate:</strong> ${{randomNumber * 1987659}}</p>
+             <button v-on:click="createPDF();">Make pdf</button>
         </div>
             <p><strong>Logline:</strong> {{ pitch.logline }}</p>
             <p><strong>Thematic Description:</strong> {{ pitch.thematic_description }}</p>
@@ -85,14 +86,19 @@
 
 <script>
 /* global setupPortfolio */
+/* global jsPDF */
 var axios = require("axios");
+var jsPDF = require("jspdf");
 
 export default {
   data: function() {
     return {
       message: "",
       pitch: {},
-      randomNumber: null
+      randomNumber: null,
+      message: "PDF Renderer",
+      student: {},
+      firstName: ""
     };
   },
 
@@ -130,18 +136,6 @@ export default {
           });
         }.bind(this)
       )
-      // .then(
-      //  function(response) {
-      //    console.log(response.data);
-      //    this.pitch = response.data;
-      //    this.pitch.visual_style_description.forEach(visual_style_description => {
-      //        axios.get(`http://localhost:3000/api/flickr/search?search=${visual_style_description.name}`).then(response => {
-      //          console.log(response.data);
-      //          visual_style_description.image = response.data.image;
-      //        })
-      //    })
-      //   }.bind(this)
-      // )
 
       .catch(
         function(error) {
@@ -152,11 +146,75 @@ export default {
   },
   methods: {
     randomNumberFunction: function() {
-      this.randomNumber = Math.random() * 100; // multiply to generate
+      this.randomNumber = Math.random() * 100;
       this.randomNumber = Math.round(this.randomNumber);
+    },
+    createPDF() {
+      //Gets pitches info from back-end
+      axios.get("http://localhost:3000/api/pitches").then(
+        function(response) {
+          console.log(response.data);
+          this.student = response.data;
+
+          var doc = new jsPDF();
+
+          console.log("JSPDF STUFF", doc);
+
+          // var image =
+          //   "https://media.licdn.com/dms/image/C5603AQHYBsTqfW_6wg/profile-displayphoto-shrink_200_200/0?e=1549497600&v=beta&t=YDIdycW2pXneFpBZpjfS1pOiqVZT_lO3lbO55sEqP_E";
+
+          // 210 width of document
+          // With 20 unit margin 170
+
+          // doc.addImage(image, "JPEG", 20, 10, 60, 60, "guy", "FAST", 0);
+          doc.text("", 30, 10);
+          //Header text
+          //-------------------------------------
+          doc.text(this.pitch.title, 20, 20);
+          doc.text(this.pitch.genre, 140, 20);
+          doc.text(this.pitch.logline, 20, 40);
+          doc.text(this.pitch.thematic_description, 20, 60);
+          doc.line(20, 75, 189, 75);
+          //-------------------------------------
+
+          // // //Producer Info
+          // // //-------------------------------------
+          // var producer_statement = this.pitch.producer_statement;
+          // var splitProducer_statement = doc.splitTextToSize(producer_statement, 160);
+          // // doc.text = this.randomNumber * 5234;
+          // // doc.text = this.randomNumber * 84578;
+          // // doc.text = this.randomNumber * 1987659;
+          // doc.setFontSize(10);
+          // doc.text(splitProducer_statement, 90, 40);
+          // // //-------------------------------------
+
+          // Character and Location
+          //-------------------------------------
+          doc.setFontSize(12);
+          doc.text("Characters", 10, 85);
+          var line = 0;
+          this.pitch.characters.forEach(character => {
+            doc.text(character.first_name, 10, 95 + line * 2);
+            doc.text(character.last_name, 10, 105 + line * 2);
+            doc.text(character.description, 10, 115 + line * 2);
+            line += 3;
+            // });
+            // var line = 0;
+            doc.text("Locations", 140, 85);
+            this.pitch.locations.forEach(location => {
+              doc.text(location.name, 140, 95 + line * 2);
+              doc.text(location.description, 140, 105 + line * 2);
+              line += 3;
+            });
+          });
+          //-------------------------------------
+
+          //Download PDF
+          doc.save("letter.pdf");
+        }.bind(this)
+      );
     }
   },
-
   updated: function() {
     console.log("updated...");
     setupPortfolio();

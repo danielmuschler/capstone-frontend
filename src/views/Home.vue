@@ -6,7 +6,8 @@
       <div v-if="imagesLoaded" v-for="pitch in pitches" class="cbp-item movie">
         <div class="cbp-item-wrap">
           <div class="cbp-caption">
-            <div class="cbp-caption-defaultWrap"><img :src="pitch.locations[0].image" alt="img3" /></div>
+            <div class="cbp-caption-defaultWrap"><img :src="pitch.locations[0].image" alt="img3" class="pitch-image" /></div>
+
                   <!-- <div class="cbp-caption-defaultWrap"><img src="contents/images/portfolios/600x600/1.jpg" /></div> -->
             <div class="cbp-caption-activeWrap">
               <div class="cbp-l-caption-alignCenter">
@@ -36,6 +37,14 @@
 </template>
 
 <style>
+.cbp-caption-defaultWrap {
+  height: 300px !important;
+}
+.pitch-image {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+}
 </style>
 
 <script>

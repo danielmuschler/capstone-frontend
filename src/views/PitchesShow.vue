@@ -154,6 +154,14 @@
 </template>
 
 <style>
+.cbp-caption-defaultWrap {
+  height: 300px !important;
+}
+.pitch-image {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+}
 </style>
 
 <script>

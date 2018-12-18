@@ -80,6 +80,44 @@
                     </a> -->
                     <p><strong>Characters:</strong></p>
                   <!--   <button v-on:click="createPDF();">Add Character</button> -->
+
+                  <!-- Button trigger modal -->
+                  <button data-toggle="modal" data-target="#Modal">
+                    Add Character
+                  </button>
+                   <br>
+                  <!-- Modal -->
+                  <div class="modal fade" id="Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="modalLabel">Add Character</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          <div class="form-group">
+                           <!-- <input type="hidden" v-model="pitch_id" v-bind:value="`${pitch.id}`" > -->
+                            <div class="form-group">
+                                        <label>First Name:</label> <input type="text" class="form-control" v-model="character_first_name" />
+                                      </div>
+                                      <div class="form-group">
+                                        <label>Last Name:</label> <input type="text" class="form-control" v-model="character_last_name" />
+                                      </div>
+                                      <div class="form-group">
+                                        <label>Description:</label> <input type="text" class="form-control" v-model="character_description" />
+                                      </div>
+                                    </div>
+                                  </div>
+                        <div class="modal-footer">
+                          <button data-dismiss="modal">Close</button>
+                          <button type="button" v-on:click="createCharacter()" class="btn btn-secondary">Save changes</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
             <div v-for="character in pitch.characters">
               <p>Name: {{ character.first_name }} {{ character.last_name }}</p>
               <p>Description: {{ character.description }}</p>
@@ -151,11 +189,11 @@ export default {
       .get("http://localhost:3000/api/pitches/" + this.$route.params.id)
       .then(
         function(response) {
-          console.log(response.data);
+          // console.log(response.data);
           this.pitch = response.data;
           this.pitch.locations.forEach(location => {
             axios.get(`http://localhost:3000/api/flickr/search?search=${location.name}`).then(response => {
-              console.log(response.data);
+              // console.log(response.data);
               location.image = response.data.image;
             });
 
@@ -163,7 +201,7 @@ export default {
               axios
                 .get(`http://localhost:3000/api/flickr/search?search=${character.first_name} ${character.last_name}`)
                 .then(response => {
-                  console.log("character results", response.data);
+                  // console.log("character results", response.data);
                   character.image = response.data.image;
                 });
             });
@@ -174,7 +212,7 @@ export default {
       .catch(
         function(error) {
           // this.$router.push("/");
-          console.log(error);
+          // console.log(error);
         }.bind(this)
       );
   },
@@ -194,16 +232,28 @@ export default {
       location.reload();
     },
 
+    createCharacter() {
+      var params = {
+        pitch_id: this.pitch.id,
+        character_first_name: this.character_first_name,
+        character_last_name: this.character_last_name,
+        character_description: this.character_description
+      };
+      console.log("chars", params);
+      axios.post("http://localhost:3000/api/characters/", params);
+      location.reload();
+    },
+
     createPDF() {
       //Gets pitches info from back-end
       axios.get("http://localhost:3000/api/pitches").then(
         function(response) {
-          console.log(response.data);
+          // console.log(response.data);
           this.student = response.data;
 
           var doc = new jsPDF();
 
-          console.log("JSPDF STUFF", doc);
+          // console.log("JSPDF STUFF", doc);
 
           // var image =
           //   "https://media.licdn.com/dms/image/C5603AQHYBsTqfW_6wg/profile-displayphoto-shrink_200_200/0?e=1549497600&v=beta&t=YDIdycW2pXneFpBZpjfS1pOiqVZT_lO3lbO55sEqP_E";
@@ -265,7 +315,7 @@ export default {
     }
   },
   updated: function() {
-    console.log("updated...");
+    // console.log("updated...");
     setupPortfolio();
   }
 };

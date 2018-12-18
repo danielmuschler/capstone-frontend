@@ -33,7 +33,38 @@
                         <div class="cbp-l-project-related-title">Locations:</div>
                     </a> -->
                     <p><strong>Locations:</strong></p>
-                    <button>Add Location</button>
+                      <!-- <button v-on:click="createPDF();">Add Location</button> -->
+                     <!-- Button trigger modal -->
+                     <button data-toggle="modal" data-target="#exampleModal">
+                       Add Location
+                     </button>
+                      <br>
+                     <!-- Modal -->
+                     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                       <div class="modal-dialog" role="document">
+                         <div class="modal-content">
+                           <div class="modal-header">
+                             <h5 class="modal-title" id="exampleModalLabel">Add Location</h5>
+                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                               <span aria-hidden="true">&times;</span>
+                             </button>
+                           </div>
+                           <div class="modal-body">
+                             <div class="form-group">
+                              <!-- <input type="hidden" v-model="pitch_id" v-bind:value="`${pitch.id}`" > -->
+                               <label>Name:</label> <input type="text" class="form-control" v-model="location_name" />
+                             </div>
+                             <div class="form-group">
+                               <label>Description:</label> <input type="text" class="form-control" v-model="location_description" />
+                             </div>
+                           </div>
+                           <div class="modal-footer">
+                             <button data-dismiss="modal">Close</button>
+                             <button type="button" v-on:click="createLocation()" class="btn btn-secondary">Save changes</button>
+                           </div>
+                         </div>
+                       </div>
+                     </div>
             <div v-for="location in pitch.locations">
               <p>Name: {{ location.name }}</p>
               <p>Description: {{ location.description }}</p>
@@ -48,6 +79,7 @@
                         <div class="cbp-l-project-related-title">Characters</div>
                     </a> -->
                     <p><strong>Characters:</strong></p>
+                  <!--   <button v-on:click="createPDF();">Add Character</button> -->
             <div v-for="character in pitch.characters">
               <p>Name: {{ character.first_name }} {{ character.last_name }}</p>
               <p>Description: {{ character.description }}</p>
@@ -66,7 +98,7 @@
               href="https://accounts.spotify.com/authorize?client_id=9cc3a914338d4b089e1892d11d72f705&response_type=code&redirect_uri=http://localhost:8080"
               >Connect to Spotify</a> -->
               <p><strong>Music:</strong></p>
-              <button>Add Song</button>
+               <!-- <button v-on:click="createPDF();">Add Song</button> -->
             <div v-for="music in pitch.musics">
               <p>Name: {{ music.name }}</p>
               <p>Artist: {{ music.artist }}</p>
@@ -151,6 +183,17 @@ export default {
       this.randomNumber = Math.random() * 100;
       this.randomNumber = Math.round(this.randomNumber);
     },
+
+    createLocation() {
+      var params = {
+        pitch_id: this.pitch.id,
+        location_name: this.location_name,
+        location_description: this.location_description
+      };
+      axios.post("http://localhost:3000/api/locations/", params);
+      location.reload();
+    },
+
     createPDF() {
       //Gets pitches info from back-end
       axios.get("http://localhost:3000/api/pitches").then(

@@ -38,7 +38,7 @@
                      <button data-toggle="modal" data-target="#exampleModal">
                        Add Location
                      </button>
-                      <br>
+                      
                      <!-- Modal -->
                      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                        <div class="modal-dialog" role="document">
@@ -100,13 +100,13 @@
                           <div class="form-group">
                            <!-- <input type="hidden" v-model="pitch_id" v-bind:value="`${pitch.id}`" > -->
                             <div class="form-group">
-                                        <label>First Name:</label> <input type="text" class="form-control" v-model="character_first_name" />
+                                        <label>First Name:</label> <input type="text" class="form-control" v-model=" character_first_name" />
                                       </div>
                                       <div class="form-group">
-                                        <label>Last Name:</label> <input type="text" class="form-control" v-model="character_last_name" />
+                                        <label>Last Name:</label> <input type="text" class="form-control" v-model=" character_last_name" />
                                       </div>
                                       <div class="form-group">
-                                        <label>Description:</label> <input type="text" class="form-control" v-model="character_description" />
+                                        <label>Description:</label> <input type="text" class="form-control" v-model=" character_description" />
                                       </div>
                                     </div>
                                   </div>
@@ -154,14 +154,6 @@
 </template>
 
 <style>
-.cbp-caption-defaultWrap {
-  height: 300px !important;
-}
-.pitch-image {
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important;
-}
 </style>
 
 <script>
